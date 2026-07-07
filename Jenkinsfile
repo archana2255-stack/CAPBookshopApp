@@ -2,15 +2,16 @@ pipeline {
     agent any
 
     stages {
+
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
             }
         }
 
-        stage('Build CAP Project') {
+        stage('Build MTAR') {
             steps {
-                bat 'npx cds build'
+                bat 'mbt build'
             }
         }
     }
